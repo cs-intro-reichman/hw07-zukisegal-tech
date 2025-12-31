@@ -59,8 +59,8 @@ public class Koch {
 		double x3=(Math.sqrt(3) / 6.0) * (y1 - y2) + 0.5 * (x1 + x2);
 		double y3=(Math.sqrt(3) / 6.0) * (x2 - x1) + 0.5 * (y1 + y2);
 		curve(n, x1, y1, x2, y2);
-		curve(n, x1, y1, x3, y3);
-		curve(n, x3, y3, x2, y2);
+		curve(n, x2, y2, x3, y3);
+		curve(n, x3, y3, x1, y1);
 
 	}
 }
