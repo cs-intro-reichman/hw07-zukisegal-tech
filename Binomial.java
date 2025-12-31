@@ -23,10 +23,10 @@ public class Binomial {
 	// Computes the Binomial function, efficiently
 	public static long binomial(int n, int k) 
 	{
-		long [][] memo= new long [n][k];
-		for(int i=0; i<memo.length; i++)
+		long[][] memo = new long[n + 1][k + 1];
+		for(int i=0; i<n; i++)
 		{
-			for(int j=0; j<memo[0].length; j++)
+			for(int j=0; j<k; j++)
 			{
 				memo[i][j]=-1;
 			}
