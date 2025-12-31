@@ -12,28 +12,28 @@ public class Binomial {
 
 	// Computes the Binomial function, basic version.
 	public static long binomial1(int n, int k) { 
-		if(k>n)
+		if (k > n)
 			return 0;
-		if(n==0 || k==n)
+
+		if (n == 0 || k == 0)
 			return 1;
-		
-		return binomial1(n - 1, k)+ binomial1(n - 1, k - 1) ;
-	 }
+
+    return binomial1(n - 1, k) + binomial1(n - 1, k - 1);
+}
+
 	
 	// Computes the Binomial function, efficiently
-	public static long binomial(int n, int k) 
-	{
+	public static long binomial(int n, int k) {
 		long[][] memo = new long[n + 1][k + 1];
-		for(int i=0; i<n; i++)
-		{
-			for(int j=0; j<k; j++)
-			{
-				memo[i][j]=-1;
-			}
-		}
+		for (int i = 0; i <= n; i++) {
+   			 for (int j = 0; j <= k; j++) {
+      		  memo[i][j] = -1;
+    }
+}	
+    return binomial(n, k, memo);
 
-		return binomial(n, k, memo);
-	}
+	} 
+	
 
 	private static long binomial(int n, int k, long[][] memo) {
 		if (memo[n][k] != -1) {
@@ -53,6 +53,4 @@ public class Binomial {
 		return memo[n][k];
 	}
 }
-
-
-
+		
