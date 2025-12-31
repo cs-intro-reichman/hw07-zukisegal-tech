@@ -12,12 +12,12 @@ public class Binomial {
 
 	// Computes the Binomial function, basic version.
 	public static long binomial1(int n, int k) { 
-		if(k<0 || k>n)
+		if(k>n)
 			return 0;
-		if(k==0 || k==n)
+		if(n==0 || k==n)
 			return 1;
 		
-		return binomial1(n - 1, k - 1) + binomial1(n - 1, k);
+		return binomial1(n - 1, k)+ binomial1(n - 1, k - 1) ;
 	 }
 	
 	// Computes the Binomial function, efficiently
